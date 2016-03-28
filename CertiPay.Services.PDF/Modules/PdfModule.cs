@@ -1,20 +1,24 @@
-﻿using CertiPay.Services.PDF.Interfaces;
+﻿using CertiPay.PDF;
 using Nancy;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CertiPay.Services.PDF.Modules
 {
     public class PdfModule : NancyModule
     {
-        public PdfModule(IPdfService pdfSvc)
+        public PdfModule(IPDFService pdfSvc)
         {
-            Get["/Pdf/GenerateDocument", runAsync: true] = async (p, ctx) =>
+            Get["/Pdf/GenerateDocument"] = p =>
             {
-                return await pdfSvc.GenerateDocument(p.url);
+                var settings = new PDFService.Settings()
+                {
+                    Uris = new List<string>()
+                    {
+                        p.url
+                    }
+                };
+
+                return pdfSvc.CreatePdf(settings);
             };
         }
     }
