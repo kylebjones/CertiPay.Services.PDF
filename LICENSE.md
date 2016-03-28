@@ -1,7 +1,6 @@
-Copyright 2015 CertiPay, Matt Wagner, and other contributors
+Copyright 2015 CertiPay, Kyle Jones, and other contributors
 
 http://certipay.com
-http://mattgwagner.com
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
