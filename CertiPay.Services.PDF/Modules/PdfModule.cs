@@ -1,4 +1,5 @@
-﻿using Nancy;
+﻿using CertiPay.Services.PDF.Interfaces;
+using Nancy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,11 @@ namespace CertiPay.Services.PDF.Modules
 {
     public class PdfModule : NancyModule
     {
-        public PdfModule()
+        public PdfModule(IPdfService pdfSvc)
         {
             Get["/Pdf/GenerateDocument", runAsync: true] = async (p, ctx) =>
             {
-                return 1;
+                return await pdfSvc.GenerateDocument(p.url);
             };
         }
     }
