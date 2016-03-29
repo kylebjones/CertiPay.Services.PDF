@@ -1,9 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CertiPay.Services.PDF", "CertiPay.Services.PDF\CertiPay.Services.PDF.csproj", "{27715950-F3F3-447C-A3BB-9E7DBAD901BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{3D776E7F-03AE-463F-87E8-CC6AA039C2A9}"
+	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
+		.build\Bootstrap.ps1 = .build\Bootstrap.ps1
+		Build.bat = Build.bat
+		.build\Common.psm1 = .build\Common.psm1
+		.build\default.ps1 = .build\default.ps1
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
