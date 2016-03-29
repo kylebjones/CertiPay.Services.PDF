@@ -92,6 +92,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Deploy.ps1" />
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
