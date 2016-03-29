@@ -37,11 +37,16 @@ FormatTaskName (("-"*25) + "[{0}]" + ("-"*25))
 Task default -depends Build
 
 Task Build -depends Restore-Packages {
-	exec { . $MSBuild $SolutionFile /t:Build /v:normal /p:Configuration=$Configuration }
+	Build -RunOctoPack $false
 }
 
 Task Package -depends Update-AssemblyInfoFiles, Build {
-	exec { . $NuGet pack "$SolutionRoot\CertiPay.Services.PDF\CertiPay.Services.PDF.nuspec" -Properties Configuration=$Configuration -OutputDirectory "$SolutionRoot" -Version "$Version" }
+	Build-Solution -RunOctoPack $true -PackageVersion $Version
+}
+
+function Build-Solution($PackageVersion, $RunOctoPack=$false)
+{
+	exec { . $MSBuild $SolutionFile /v:quiet /m /p:Configuration=$Configuration /p:RunOctoPack=$RunOctoPack /p:OctoPackPackageVersion=$PackageVersion }
 }
 
 Task Clean {
