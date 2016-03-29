@@ -37,7 +37,7 @@ FormatTaskName (("-"*25) + "[{0}]" + ("-"*25))
 Task default -depends Build
 
 Task Build -depends Restore-Packages {
-	Build -RunOctoPack $false
+	Build-Solution -RunOctoPack $false
 }
 
 Task Package -depends Update-AssemblyInfoFiles, Build {
