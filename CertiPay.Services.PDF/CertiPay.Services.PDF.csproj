@@ -93,19 +93,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="appveyor.yml" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-	<Content Include="..\packages\ABCpdf.ABCGecko.10.0.0.0\bin\ABCGecko.dll">
+    <Content Include="..\packages\ABCpdf.ABCGecko.10.0.0.0\bin\ABCGecko.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="..\packages\ABCpdf.10.0.0.0\bin\ABCpdf10-32.dll">
+    <Content Include="..\packages\ABCpdf.10.0.0.0\bin\ABCpdf10-32.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-	<Content Include="..\packages\ABCpdf.10.0.0.0\bin\ABCpdf10-64.dll">
+    <Content Include="..\packages\ABCpdf.10.0.0.0\bin\ABCpdf10-64.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\packages\ABCpdf.ABCGecko.10.0.0.0\content\XULRunner21_0\AccessibleMarshal.dll">
