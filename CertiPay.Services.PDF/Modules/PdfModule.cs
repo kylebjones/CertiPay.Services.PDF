@@ -10,11 +10,13 @@ namespace CertiPay.Services.PDF.Modules
         {
             Get["/Pdf/GenerateDocument"] = p =>
             {
+                var url = this.Request.Query["url"];
+
                 var settings = new PDFService.Settings()
                 {
                     Uris = new List<string>()
                     {
-                        p.url
+                        url
                     }
                 };
 

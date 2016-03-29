@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -84,6 +85,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bootstrapper.cs" />
     <Compile Include="Modules\PdfModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,6 +98,15 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+	<Content Include="..\packages\ABCpdf.ABCGecko.10.0.0.0\bin\ABCGecko.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+	<Content Include="..\packages\ABCpdf.10.0.0.0\bin\ABCpdf10-32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+	<Content Include="..\packages\ABCpdf.10.0.0.0\bin\ABCpdf10-64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\packages\ABCpdf.ABCGecko.10.0.0.0\content\XULRunner21_0\AccessibleMarshal.dll">
       <Link>XULRunner21_0\\AccessibleMarshal.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
