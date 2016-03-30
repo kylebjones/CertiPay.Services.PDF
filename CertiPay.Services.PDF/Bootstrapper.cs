@@ -1,19 +1,21 @@
-﻿using Nancy;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CertiPay.PDF;
+using Nancy;
 using Nancy.TinyIoc;
-using CertiPay.PDF;
+using System;
+using System.Configuration;
 
 namespace CertiPay.Services.PDF
 {
     public class Bootstrapper : DefaultNancyBootstrapper
     {
-        protected override void ConfigureRequestContainer(TinyIoCContainer container, NancyContext context)
+        private static String ABCPdfLicense
         {
-            container.Register<IPDFService, PDFService>();
+            get { return ConfigurationManager.AppSettings["ABCPDF-License"]; }
+        }
+
+        protected override void ConfigureApplicationContainer(TinyIoCContainer container)
+        {
+            container.Register<IPDFService>(new PDFService(ABCPdfLicense));
         }
     }
 }
