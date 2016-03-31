@@ -29,10 +29,11 @@ namespace CertiPay.Services.PDF.Modules
             Get["/Pdf/GenerateDocument"] = p =>
             {
                 var url = this.Request.Query["url"];
+                var useLandscape = (bool?)this.Request.Query["landscape"] ?? null;
 
                 var settings = new PDFService.Settings()
                 {
-                    UseLandscapeOrientation = true,
+                    UseLandscapeOrientation = useLandscape ?? false,
                     Uris = new List<string>()
                     {
                         url
