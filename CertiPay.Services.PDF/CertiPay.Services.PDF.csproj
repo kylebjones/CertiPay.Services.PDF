@@ -38,12 +38,12 @@
       <HintPath>..\packages\ABCpdf.10.0.0.0\lib\net40\ABCpdf.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CertiPay.Common, Version=3.0.10.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CertiPay.Common.3.0.10\lib\net451\CertiPay.Common.dll</HintPath>
+    <Reference Include="CertiPay.Common, Version=3.0.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CertiPay.Common.3.0.11\lib\net451\CertiPay.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CertiPay.PDF, Version=3.0.10.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CertiPay.PDF.3.0.10\lib\net451\CertiPay.PDF.dll</HintPath>
+    <Reference Include="CertiPay.PDF, Version=3.0.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CertiPay.PDF.3.0.11\lib\net451\CertiPay.PDF.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Nancy, Version=1.4.2.0, Culture=neutral, processorArchitecture=MSIL">
