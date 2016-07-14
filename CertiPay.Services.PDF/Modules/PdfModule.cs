@@ -1,6 +1,7 @@
 ﻿using CertiPay.Common;
 using CertiPay.PDF;
 using Nancy;
+using Nancy.ModelBinding;
 using Nancy.Responses;
 using System;
 using System.Collections.Generic;
@@ -26,19 +27,9 @@ namespace CertiPay.Services.PDF.Modules
                 });
             };
 
-            Get["/Pdf/GenerateDocument"] = p =>
+            Post["/Pdf/GenerateDocument"] = p =>
             {
-                var url = this.Request.Query["url"];
-                var useLandscape = (bool?)this.Request.Query["landscape"] ?? null;
-
-                var settings = new PDFService.Settings()
-                {
-                    UseLandscapeOrientation = useLandscape ?? false,
-                    Uris = new List<string>()
-                    {
-                        url
-                    }
-                };
+                var settings = this.Bind<PDFService.Settings>();
 
                 var stream = new MemoryStream(pdfSvc.CreatePdf(settings));
 
