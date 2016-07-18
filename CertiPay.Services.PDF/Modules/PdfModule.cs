@@ -27,6 +27,28 @@ namespace CertiPay.Services.PDF.Modules
                 });
             };
 
+            Get["/Pdf/GenerateDocument"] = p =>
+            {
+                var url = this.Request.Query["url"];
+                var useLandscape = (bool?)this.Request.Query["landscape"] ?? null;
+
+                var settings = new PDFService.Settings()
+                {
+                    UseLandscapeOrientation = useLandscape ?? false,
+                    Uris = new List<string>()
+                    {
+                        url
+                    }
+                };
+
+                var stream = new MemoryStream(pdfSvc.CreatePdf(settings));
+
+                //Future change.  Add ability for FileName to be passed in from Caller.
+                var response = new StreamResponse(() => stream, MimeTypes.GetMimeType("Generated-Document.pdf"));
+
+                return response;
+            };
+
             Post["/Pdf/GenerateDocument"] = p =>
             {
                 var settings = this.Bind<PDFService.Settings>();
