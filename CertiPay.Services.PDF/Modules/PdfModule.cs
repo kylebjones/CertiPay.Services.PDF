@@ -1,11 +1,12 @@
 ﻿using CertiPay.Common;
 using CertiPay.PDF;
 using Nancy;
+using Nancy.ModelBinding;
 using Nancy.Responses;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
+using System.Net.Mime;
 
 namespace CertiPay.Services.PDF.Modules
 {
@@ -20,7 +21,7 @@ namespace CertiPay.Services.PDF.Modules
                 return Response.AsJson(new
                 {
                     Application = AppName,
-                    Version = CertiPay.Common.Utilities.Version<PdfModule>(),
+                    Version = Utilities.Version<PdfModule>(),
                     Environment = EnvUtil.Current.DisplayName(),
                     Server = Environment.MachineName
                 });
@@ -28,25 +29,26 @@ namespace CertiPay.Services.PDF.Modules
 
             Get["/Pdf/GenerateDocument"] = p =>
             {
-                var url = this.Request.Query["url"];
-                var useLandscape = (bool?)this.Request.Query["landscape"] ?? null;
+                var useLandscape = (bool?)Request.Query["landscape"] ?? null;
 
-                var settings = new PDFService.Settings()
+                return GetPdf(pdfSvc, new PDFService.Settings
                 {
                     UseLandscapeOrientation = useLandscape ?? false,
-                    Uris = new List<string>()
-                    {
-                        url
-                    }
-                };
-
-                var stream = new MemoryStream(pdfSvc.CreatePdf(settings));
-
-                //Future change.  Add ability for FileName to be passed in from Caller.
-                var response = new StreamResponse(() => stream, MimeTypes.GetMimeType("Generated-Document.pdf"));
-
-                return response;
+                    Uris = new String[] { Request.Query["url"] }
+                });
             };
+
+            Post["/Pdf/GenerateDocument"] = p =>
+            {
+                return GetPdf(pdfSvc, this.Bind<PDFService.Settings>());
+            };
+        }
+
+        private StreamResponse GetPdf(IPDFService pdfSvc, PDFService.Settings request)
+        {
+            var stream = new MemoryStream(pdfSvc.CreatePdf(request));
+
+            return new StreamResponse(() => stream, MediaTypeNames.Application.Pdf);
         }
     }
 }

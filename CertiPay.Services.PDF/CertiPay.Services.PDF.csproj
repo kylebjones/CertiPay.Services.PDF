@@ -38,12 +38,12 @@
       <HintPath>..\packages\ABCpdf.10.0.0.0\lib\net40\ABCpdf.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CertiPay.Common, Version=2.2.17.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CertiPay.Common.2.2.17\lib\net451\CertiPay.Common.dll</HintPath>
+    <Reference Include="CertiPay.Common, Version=3.0.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CertiPay.Common.3.0.11\lib\net451\CertiPay.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CertiPay.PDF, Version=2.2.17.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CertiPay.PDF.2.2.17\lib\net451\CertiPay.PDF.dll</HintPath>
+    <Reference Include="CertiPay.PDF, Version=3.0.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CertiPay.PDF.3.0.11\lib\net451\CertiPay.PDF.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Nancy, Version=1.4.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -55,19 +55,19 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Serilog, Version=1.5.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>..\packages\Serilog.1.5.11\lib\net45\Serilog.dll</HintPath>
+      <HintPath>..\packages\Serilog.1.5.14\lib\net45\Serilog.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Serilog.FullNetFx, Version=1.5.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>..\packages\Serilog.1.5.11\lib\net45\Serilog.FullNetFx.dll</HintPath>
+      <HintPath>..\packages\Serilog.1.5.14\lib\net45\Serilog.FullNetFx.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SerilogWeb.Classic, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9462ddd55fbc0e7f, processorArchitecture=MSIL">
-      <HintPath>..\packages\SerilogWeb.Classic.2.0.6\lib\net45\SerilogWeb.Classic.dll</HintPath>
+      <HintPath>..\packages\SerilogWeb.Classic.2.0.9\lib\net45\SerilogWeb.Classic.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="StackExchange.Redis, Version=1.0.316.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\StackExchange.Redis.1.0.481\lib\net45\StackExchange.Redis.dll</HintPath>
+    <Reference Include="StackExchange.Redis, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.1.1.603\lib\net46\StackExchange.Redis.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
